@@ -1,7 +1,70 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-    ]
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run tests",
+      "type": "npm",
+      "script": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Lint JavaScript",
+      "type": "npm",
+      "script": "lint-js",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Fix JavaScript",
+      "type": "npm",
+      "script": "fix-js",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Fix JavaScript (dry-run)",
+      "type": "npm",
+      "script": "fix-js-dry-run",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Lint JSON",
+      "type": "npm",
+      "script": "lint-json",
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint Markdown",
+      "type": "npm",
+      "script": "lint-md",
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint YAML",
+      "type": "npm",
+      "script": "lint-yaml",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Coverage",
+      "type": "npm",
+      "script": "coverage"
+    },
+    {
+      "label": "NPM Install",
+      "type": "npm",
+      "script": "install"
+    }
+  ]
 }

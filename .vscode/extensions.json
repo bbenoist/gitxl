@@ -3,13 +3,17 @@
   // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
+    "christian-kohler.npm-intellisense",
     "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
     "deerawan.vscode-faker",
+    "dkundel.vscode-npm-source",
     "donjayamanne.githistory",
     "eamodio.gitlens",
     "editorconfig.editorconfig",
     "fatihacet.gitlab-workflow",
     "gruntfuggly.todo-tree",
+    "orta.vscode-jest",
     "redhat.vscode-yaml",
     "tyriar.sort-lines",
     "wmaurer.change-case",

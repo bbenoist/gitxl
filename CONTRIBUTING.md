@@ -11,6 +11,10 @@ When contributing to this repository, please first discuss the change you wish t
   > Extensions: Show Recommended Extensions
   ```
 
+## Developer Setup
+
+Install [Node.js](https://nodejs.org/) then run `npm install` at the root of this repository to install the npm development dependencies.
+
 ## Git Workflow
 
 We use the [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) to ensure a reliable and consistent branching model.
@@ -97,6 +101,10 @@ See [markdownlint rules](https://github.com/DavidAnson/markdownlint/blob/master/
   - a
   - b
   ```
+
+### JavaScript
+
+Our JavaScript coding guidelines are verified with [eslint](https://eslint.org/) and based on [`airbnb/javascript`](https://github.com/airbnb/javascript) which we recommend reading before working on the JS code of this repository.
 
 ## Versioning
 

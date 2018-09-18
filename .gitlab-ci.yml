@@ -1,0 +1,28 @@
+image: node:8.12.0
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - install
+  - lint
+  - test
+
+npm_install:
+  stage: install
+  script:
+    - npm install
+
+lint:
+  stage: lint
+  script:
+    - npm run lint-md
+    - npm run lint-json
+    - npm run lint-yaml
+    - npm run lint-js
+
+test:
+  stage: test
+  script:
+    - npm run-script coverage
