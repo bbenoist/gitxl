@@ -1,0 +1,22 @@
+# Personal and temporary files
+*~
+
+# Windows system files
+*.stackdump
+*.lnk
+ehthumbs.db
+ehthumbs_vista.db
+Thumbs.db
+$RECYCLE.BIN/
+[Dd]esktop.ini
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# Diff / Patch
+*.orig
+*.rej

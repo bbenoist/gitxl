@@ -1,0 +1,32 @@
+# Top-most EditorConfig file.
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+# Default indentation when indent_style is overridden with tab
+tab_size = 4
+trim_trailing_whitespace = true
+
+[*.md]
+# Markdown can use trailing whitespaces to determine new lines.
+trim_trailing_whitespace = false
+
+[*.sh,*.bash,*.csh]
+# *Nix scripts requires LF.
+end_of_line = lf
+
+[*.bat,*.ps1]
+# Batch and PowerShell scripts requires CRLF and sometimes UTF8-BOM.
+charset = utf-8-bom
+end_of_line = crlf
+
+[Makefile]
+# Makefiles use tabs for indentation
+indent_style = tab
+
+[*.bat]
+# Batch files use tabs for indentation.
+indent_style = tab

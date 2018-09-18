@@ -1,0 +1,31 @@
+{
+  // Controls whether the diff editor shows changes in leading or trailing
+  // whitespace as diffs.
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  // Show all whitespaces by default.
+  "editor.renderWhitespace": "all",
+
+  // Useful indicators to avoid too long lines.
+  "editor.rulers": [ 80, 100, 120 ],
+
+  // Ensure tabs are the same length than space indentation.
+  "editor.tabSize": 2,
+
+  // Configure glob patterns for excluding files and folders. For example, the
+  // files explorer decides which files and folders to show or hide based on
+  // this setting.
+  // Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/*.lnk": true,
+    "**/*.orig": true,
+    "**/*.rej": true,
+    "**/*.stackdump": true,
+    "**/ehthumbs.db": true,
+    "**/ehthumbs_vista.db": true,
+    "**/Thumbs.db": true,
+    "**/$RECYCLE.BIN/": true,
+    "**/[Dd]esktop.ini": true,
+  }
+}
