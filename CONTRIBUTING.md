@@ -13,6 +13,23 @@ When contributing to this repository, please first discuss the change you wish t
 
 We use the [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) to ensure a reliable and consistent branching model.
 
+## Directory Structure
+
+Please try to respect the following directories at the root of this repository:
+
+* `build` - Build output
+* `cache` - Cache files
+* `conf` - Toolchains and configuration files.
+* `doc` - Documentation and its resources. _`README.md` remains the main entry point._
+* `ext` - External libraries and resources. _Please use alternatives (e.g. package manager, Git LFS, Git submodules, Git subtree) whenever possible._
+* `log` - Log files
+* `src` - Source code
+* `test` - Tests
+* `tmp` - Temporary files
+* `**/res` - Resources (e.g. images)
+
+When you have resources to regroup, create a `res` directory wherever its context makes sense.
+
 ## Style Guides
 
 ### Git Branches
