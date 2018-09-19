@@ -1,16 +1,16 @@
 # Set default behavior to automatically normalize line endings.
 * text=auto
 
-# *Nix scripts.
+# *Nix scripts
 *.bash text eol=lf
 *.csh text eol=lf
 *.sh text eol=lf
 
-# Windows scripts.
+# Windows scripts
 *.bat text eol=crlf
 *.ps1 text eol=crlf
 
-# Executable/Library files.
+# Executable/Library files
 *.a binary
 *.dll binary
 *.dylib binary
@@ -19,7 +19,7 @@
 *.pyc binary
 *.so binary
 
-# Image files.
+# Image files
 *.ai binary
 *.bmp binary
 *.eps binary
