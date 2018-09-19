@@ -5,9 +5,12 @@
 *.bash text eol=lf
 *.csh text eol=lf
 *.sh text eol=lf
+configure text eol=lf
+configure.ac text eol=lf
 
 # Windows scripts
 *.bat text eol=crlf
+*.cmd text eol=crlf
 *.ps1 text eol=crlf
 
 # Executable/Library files
