@@ -78,7 +78,7 @@ See [markdownlint rules](https://github.com/DavidAnson/markdownlint/blob/master/
 
 * Use 2 spaces for indentation.
 
-* When possible, use undersores `_` instead of hyphen `-` for key naming.
+* When possible, use underscores `_` instead of hyphen `-` for key naming.
 
 * Indent hyphen of lists by 2 spaces.  
   e.g.:
