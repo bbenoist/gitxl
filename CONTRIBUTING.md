@@ -5,9 +5,11 @@ When contributing to this repository, please first discuss the change you wish t
 ## Recommended Tools
 
 * [Visual Studio Code](https://code.visualstudio.com/) - A lightweight code editor.  
-  The following VS Code extensions are also recommended:
-  * `editorconfig.editorconfig`
-  * `davidanson.vscode-markdownlint`
+  The list of recommended VS Code extensions can be seen by opening the root directory of this repository in VS Code and entering the following command:
+
+  ```text
+  > Extensions: Show Recommended Extensions
+  ```
 
 ## Git Workflow
 
@@ -76,7 +78,7 @@ See [markdownlint rules](https://github.com/DavidAnson/markdownlint/blob/master/
 
 * Use 2 spaces for indentation.
 
-* When possible, use undescores `_` instead of hyphen `-` for key naming.
+* When possible, use undersores `_` instead of hyphen `-` for key naming.
 
 * Indent hyphen of lists by 2 spaces.  
   e.g.:
