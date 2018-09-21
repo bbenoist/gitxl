@@ -4,16 +4,82 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run tests",
+      "label": "Clean",
       "type": "npm",
-      "script": "test",
+      "script": "clean",
+      "problemMatcher": []
+    },
+    {
+      "label": "Fix TypeScript",
+      "type": "npm",
+      "script": "fix-ts",
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint TypeScript",
+      "type": "npm",
+      "script": "lint-ts",
+      "problemMatcher": [
+        "$tslint5"
+      ]
+    },
+    {
+      "label": "Prebuild",
+      "type": "npm",
+      "script": "prebuild",
+      "problemMatcher": [
+        "$tslint5"
+      ]
+    },
+    {
+      "label": "Build",
+      "identifier": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": [
+        "$tsc"
+      ]
+    },
+    {
+      "label": "Run tests",
       "group": {
         "kind": "test",
         "isDefault": true
-      }
+      },
+      "type": "npm",
+      "script": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Coverage",
+      "group": "test",
+      "type": "npm",
+      "script": "coverage",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build (Watch)",
+      "group": "build",
+      "type": "npm",
+      "script": "watch-build",
+      "problemMatcher": [
+        "$tsc"
+      ]
+    },
+    {
+      "label": "Test (Watch)",
+      "group": "test",
+      "type": "npm",
+      "script": "watch-test",
+      "problemMatcher": []
     },
     {
       "label": "Lint JavaScript",
+      "group": "test",
       "type": "npm",
       "script": "lint-js",
       "problemMatcher": [
@@ -38,18 +104,21 @@
     },
     {
       "label": "Lint JSON",
+      "group": "test",
       "type": "npm",
       "script": "lint-json",
       "problemMatcher": []
     },
     {
       "label": "Lint Markdown",
+      "group": "test",
       "type": "npm",
       "script": "lint-md",
       "problemMatcher": []
     },
     {
       "label": "Lint YAML",
+      "group": "test",
       "type": "npm",
       "script": "lint-yaml",
       "problemMatcher": [
@@ -57,14 +126,10 @@
       ]
     },
     {
-      "label": "Coverage",
-      "type": "npm",
-      "script": "coverage"
-    },
-    {
       "label": "NPM Install",
       "type": "npm",
-      "script": "install"
+      "script": "install",
+      "problemMatcher": []
     }
   ]
 }

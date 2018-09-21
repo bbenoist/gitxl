@@ -1,4 +1,9 @@
 {
+  // Specifies the folder path containing the tsserver and lib*.d.ts files to use.
+  "typescript.tsdk": "node_modules/typescript/lib/",
+
+  "editor.formatOnSave": true,
+
   // Controls whether the diff editor shows changes in leading or trailing
   // whitespace as diffs.
   "diffEditor.ignoreTrimWhitespace": false,

@@ -1,12 +1,13 @@
 image: node:8.12.0
 
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
-    - node_modules/
+  - node_modules/
 
 stages:
   - install
-  - lint
+  - build
   - test
 
 npm_install:
@@ -14,8 +15,13 @@ npm_install:
   script:
     - npm install
 
+build:
+  stage: build
+  script:
+    - npm run build
+
 lint:
-  stage: lint
+  stage: build
   script:
     - npm run lint-md
     - npm run lint-json

@@ -3,9 +3,8 @@
 # Ignore files compiled from TypeScript and CoffeeScript
 **/*.{ts,coffee}.js
 
-# Ignore built files except build/index.js
+# Ignore built files.
 build/
-!build/index.js
 
 # Code coverage output might contain js external files.
 coverage

@@ -11,16 +11,18 @@
     "donjayamanne.githistory",
     "eamodio.gitlens",
     "editorconfig.editorconfig",
+    "eg2.tslint",
+    "eg2.vscode-npm-script",
     "fatihacet.gitlab-workflow",
     "gruntfuggly.todo-tree",
     "orta.vscode-jest",
+    "rbbit.typescript-hero",
+    "rbbit.typescript-hero",
     "redhat.vscode-yaml",
     "tyriar.sort-lines",
     "wmaurer.change-case",
     "yzhang.markdown-all-in-one",
   ],
-
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
-  "unwantedRecommendations": [
-  ]
+  "unwantedRecommendations": []
 }
