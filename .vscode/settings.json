@@ -2,7 +2,13 @@
   // Specifies the folder path containing the tsserver and lib*.d.ts files to use.
   "typescript.tsdk": "node_modules/typescript/lib/",
 
+  // Format a file on save. A formatter must be available, the file must not be
+  // auto-saved, and editor must not be shutting down.
   "editor.formatOnSave": true,
+
+  // Enable/disable default JSON formatter
+  // Disabled but too strict and no way to define decent rules.
+  "json.format.enable": false,
 
   // Controls whether the diff editor shows changes in leading or trailing
   // whitespace as diffs.
