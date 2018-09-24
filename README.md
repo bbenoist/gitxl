@@ -4,6 +4,15 @@ TODO - Replace every occurrence of `__PROJECT_NAME__` by the actual name of your
 
 TODO - A little overview that explains **what** the project is about.
 
+## CI Status
+
+TODO - Replace __GITLAB_PROJECT_ID__ and __GITLAB_BRANCH__ by correct values.
+TODO - Repeat the last row for each branch you'd like to be displayed (e.g. develop, master).
+
+| Branch              | CI                                                                                                                                                                        | Coverage                                                                                                                                                                        |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `__GITLAB_BRANCH__` | [![CI](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/badges/__GITLAB_BRANCH__/pipeline.svg)](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/commits/__GITLAB_BRANCH__) | [![Coverage](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/badges/__GITLAB_BRANCH__/coverage.svg)](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/commits/__GITLAB_BRANCH__) |
+
 ## Motivation
 
 TODO - A short description of the motivation behind the creation and maintenance of the project. This should explain **why** this project exists.
