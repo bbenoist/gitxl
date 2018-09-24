@@ -32,3 +32,4 @@ test:
   stage: test
   script:
     - npm run-script coverage
+  coverage: "/All files[^|]*\\|[^|]*\\s+([\\d\\.]+)/"
