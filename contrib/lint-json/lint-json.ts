@@ -53,3 +53,8 @@ export function lintJsonFiles(
     })
     .includes(false);
 }
+
+export function lintAllJsonFiles(onError: (error: string) => void) {
+  const files: string[] = glob.sync("**/*.json", globOptions);
+  return lintJsonFiles(files, onError);
+}
