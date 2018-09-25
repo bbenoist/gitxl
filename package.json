@@ -21,7 +21,8 @@
     "fix-js-dry-run": "eslint --fix-dry-run --ext .jsx,.js .",
     "lint-json": "ts-node contrib/lint-json/main.ts",
     "lint-md": "markdownlint -i node_modules **/*.md",
-    "lint-yaml": "yamllint --ignore=node_modules/**/*.yaml --ignore=node_modules/**/*.yml **/*.yaml **/*.yml"
+    "lint-yaml": "yamllint --ignore=node_modules/**/*.yaml --ignore=node_modules/**/*.yml **/*.yaml **/*.yml",
+    "lint-tasks": "ts-node contrib/lint-tasks/main.ts"
   },
   "dependencies": {},
   "devDependencies": {
@@ -30,6 +31,7 @@
     "@types/glob": "^7.1.0",
     "@types/jest": "^23.3.2",
     "@types/json5": "0.0.30",
+    "@types/mock-fs": "^3.6.30",
     "@types/node": "^10.10.1",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -41,6 +43,7 @@
     "jest": "^23.6.0",
     "json5": "^2.0.1",
     "markdownlint-cli": "^0.13.0",
+    "mock-fs": "^4.7.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.10.1",
     "ts-node": "^7.0.1",

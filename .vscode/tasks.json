@@ -126,6 +126,13 @@
       ]
     },
     {
+      "label": "Lint Tasks",
+      "group": "test",
+      "type": "npm",
+      "script": "lint-tasks",
+      "problemMatcher": []
+    },
+    {
       "label": "NPM Install",
       "type": "npm",
       "script": "install",
