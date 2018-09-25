@@ -27,5 +27,12 @@
     "**/Thumbs.db": true,
     "**/$RECYCLE.BIN/": true,
     "**/[Dd]esktop.ini": true,
-  }
+  },
+
+  // The path to your Jest configuration file
+  "jest.pathToConfig": "jest.config.js",
+
+  // The path to the Jest binary, or an npm command to run tests prefixed with
+  // `--` e.g. `node_modules/.bin/jest` or `npm test --`
+  "jest.pathToJest": "node_modules/.bin/jest",
 }
