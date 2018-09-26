@@ -12,3 +12,4 @@ rules:
       - "**/*.spec.js"
       - "contrib/**"
       - "test/**"
+      - "jest.*.js"
