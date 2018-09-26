@@ -1,14 +1,14 @@
-import glob from 'glob';
-import json5 from 'json5';
-import { readFileSync } from 'fs';
+import glob from "glob";
+import json5 from "json5";
+import { readFileSync } from "fs";
 
 const ignored = [
-  'node_modules/**',
-  'build/**',
+  "node_modules/**",
+  "build/**",
 ];
 
 const extendedJson = [
-  '.vscode/**',
+  ".vscode/**",
 ];
 
 const globOptions = {

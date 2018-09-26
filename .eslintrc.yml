@@ -4,6 +4,9 @@ env:
   jest: true
 
 rules:
+  quotes:
+    - error
+    - double
   linebreak-style: 0
   import/no-extraneous-dependencies:
     - error
