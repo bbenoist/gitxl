@@ -14,7 +14,7 @@ module.exports = {
     //   statements: 100,
     // },
   },
-  transform: { ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js" },
+  transform: { ".(ts)": "ts-jest" },
   testRegex: "\\.test\\.ts$",
   testPathIgnorePatterns: ["/node_modules/"],
   moduleFileExtensions: ["ts", "js"],
