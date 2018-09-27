@@ -1,4 +1,4 @@
-import * as mockFs from "mock-fs";
+import mockFs from "mock-fs";
 import * as lintJson from "./lint-json";
 
 test.each([

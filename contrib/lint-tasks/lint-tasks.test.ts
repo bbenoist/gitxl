@@ -1,6 +1,6 @@
 import { lintTasks, packageJsonFile, tasksJsonFile } from "./lint-tasks";
 
-import * as mockFs from "mock-fs";
+import mockFs from "mock-fs";
 
 test.each([
   [
