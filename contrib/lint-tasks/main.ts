@@ -1,4 +1,3 @@
-import * as glob from "glob";
 import { lintTasks } from "./lint-tasks";
 
 function main(): number {

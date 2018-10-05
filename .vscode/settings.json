@@ -2,9 +2,32 @@
   // Specifies the folder path containing the tsserver and lib*.d.ts files to use.
   "typescript.tsdk": "node_modules/typescript/lib/",
 
-  // Format a file on save. A formatter must be available, the file must not be
-  // auto-saved, and editor must not be shutting down.
+  "eslint.autoFixOnSave": true,
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ],
+
   "editor.formatOnSave": true,
+
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
 
   // Enable/disable default JSON formatter
   // Disabled but too strict and no way to define decent rules.
@@ -18,7 +41,7 @@
   "editor.renderWhitespace": "all",
 
   // Useful indicators to avoid too long lines.
-  "editor.rulers": [ 80, 100, 120 ],
+  "editor.rulers": [80, 100, 120],
 
   // Ensure tabs are the same length than space indentation.
   "editor.tabSize": 2,
@@ -37,7 +60,7 @@
     "**/ehthumbs_vista.db": true,
     "**/Thumbs.db": true,
     "**/$RECYCLE.BIN/": true,
-    "**/[Dd]esktop.ini": true,
+    "**/[Dd]esktop.ini": true
   },
 
   // The path to your Jest configuration file
@@ -45,5 +68,5 @@
 
   // The path to the Jest binary, or an npm command to run tests prefixed with
   // `--` e.g. `node_modules/.bin/jest` or `npm test --`
-  "jest.pathToJest": "node_modules/.bin/jest",
+  "jest.pathToJest": "node_modules/.bin/jest"
 }

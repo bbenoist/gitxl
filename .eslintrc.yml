@@ -1,18 +1,24 @@
-extends: airbnb
+extends:
+  - "plugin:@typescript-eslint/recommended"
+  - "prettier/@typescript-eslint"
+  - "plugin:prettier/recommended"
 
 env:
   jest: true
 
+parser: "@typescript-eslint/parser"
+
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+
 rules:
-  quotes:
-    - error
-    - double
   linebreak-style: 0
-  import/no-extraneous-dependencies:
+  quotes: 0
+  "@typescript-eslint/quotes": off
+  "@typescript-eslint/explicit-function-return-type": off
+  "@typescript-eslint/no-explicit-any": off
+  "@typescript-eslint/no-namespace": off
+  "@typescript-eslint/interface-name-prefix":
     - error
-    - devDependencies:
-      - "**/*.test.js"
-      - "**/*.spec.js"
-      - "contrib/**"
-      - "test/**"
-      - "jest.*.js"
+    - prefixWithI: always

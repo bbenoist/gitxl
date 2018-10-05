@@ -34,16 +34,22 @@ function getTasks() {
 export function lintTasks() {
   const scripts = getScripts();
   const tasks = getTasks();
-  scripts.forEach((script) => {
-    const task = tasks.find((t) => t.type === "npm" && t.script === script);
+  scripts.forEach(script => {
+    const task = tasks.find(t => t.type === "npm" && t.script === script);
     if (!task) {
-      throw new Error(`${packageJsonFile} script ${script} is missing in the tasks property of ${tasksJsonFile}`);
+      throw new Error(
+        `${packageJsonFile} script ${script} is missing in the tasks property of ${tasksJsonFile}`
+      );
     }
     if (!task.label) {
-      throw new Error(`${tasksJsonFile} task for script ${script} is missing a label property`);
+      throw new Error(
+        `${tasksJsonFile} task for script ${script} is missing a label property`
+      );
     }
     if (!task.problemMatcher) {
-      throw new Error(`${tasksJsonFile} task for script ${script} is missing a problemMatcher property`);
+      throw new Error(
+        `${tasksJsonFile} task for script ${script} is missing a problemMatcher property`
+      );
     }
   });
 }

@@ -1,22 +1,18 @@
 module.exports = {
+  coverageDirectory: "coverage",
+  coverageReporters: ["json", "lcov", "text", "html"],
   coverageThreshold: {
-    global: {
-      branches: 0,
-      functions: 0,
-      lines: 0,
-      statements: 0,
-    },
-    // Uncomment to enforce 100% coverage on the src directory.
-    // './src/': {
+    // // Uncomment to enforce 100% coverage on the src directory.
+    // "./src/": {
     //   branches: 100,
     //   functions: 100,
     //   lines: 100,
     //   statements: 100,
     // },
   },
-  transform: { ".(ts)": "ts-jest" },
-  testRegex: "\\.test\\.ts$",
-  testPathIgnorePatterns: ["/node_modules/"],
   moduleFileExtensions: ["ts", "js"],
   testEnvironment: "node",
+  testPathIgnorePatterns: ["/node_modules/"],
+  testRegex: "\\.test\\.ts$",
+  transform: { ".(ts)": "ts-jest" },
 };

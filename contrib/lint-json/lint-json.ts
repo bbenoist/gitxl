@@ -18,7 +18,7 @@ export function parseJson(content: string, isExtended: boolean): any {
 export function lintJson(
   content: string,
   isExtended: boolean,
-  onError: (error: string) => void,
+  onError: (error: string) => void
 ): boolean {
   try {
     parseJson(content, isExtended);
@@ -32,7 +32,7 @@ export function lintJson(
 export function lintJsonFile(
   file: string,
   isExtended: boolean,
-  onError: (error: string) => void,
+  onError: (error: string) => void
 ): boolean {
   const content = readFileSync(file);
   const errCallback = (error: string) => onError(`${file} - ${error}`);
@@ -41,13 +41,13 @@ export function lintJsonFile(
 
 export function lintJsonFiles(
   files: string[],
-  onError: (error: string) => void,
+  onError: (error: string) => void
 ): boolean {
   const extendedFiles = ([] as string[]).concat(
-    ...extendedJson.map((pattern) => glob.sync(pattern, globOptions)),
+    ...extendedJson.map(pattern => glob.sync(pattern, globOptions))
   );
   return !files
-    .map((file) => {
+    .map(file => {
       const isExtended = extendedFiles.includes(file);
       return lintJsonFile(file, isExtended, onError);
     })

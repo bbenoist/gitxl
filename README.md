@@ -1,58 +1,129 @@
-# __PROJECT_NAME__
+# gitxl
 
-TODO - Replace every occurrence of `__PROJECT_NAME__` by the actual name of your new project.
-
-TODO - A little overview that explains **what** the project is about.
-
-## CI Status
-
-TODO - Replace __GITLAB_PROJECT_ID__ and __GITLAB_BRANCH__ by correct values.
-TODO - Repeat the last row for each branch you'd like to be displayed (e.g. develop, master).
-
-| Branch              | CI                                                                                                                                                                        | Coverage                                                                                                                                                                        |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `__GITLAB_BRANCH__` | [![CI](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/badges/__GITLAB_BRANCH__/pipeline.svg)](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/commits/__GITLAB_BRANCH__) | [![Coverage](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/badges/__GITLAB_BRANCH__/coverage.svg)](https://gitlab.com/dropxl/__GITLAB_PROJECT_ID__/commits/__GITLAB_BRANCH__) |
+A handy tool to help working with Git repositories.
 
 ## Motivation
 
-TODO - A short description of the motivation behind the creation and maintenance of the project. This should explain **why** this project exists.
+As working with complex Git repository structures (e.g. lot of dependencies between branches) can become very time consuming, I've decided to automatize complex operations with a tool based on a declarative configuration.
 
 ## Features
 
-TODO - List what makes this project stand out?
+* Updates the local (i.e. in your repository `.git` directory) list of Git remotes.
+* Apply merge dependency-chains between branches.
 
 ## Example
 
-TODO - Show what the project does as concisely as possible, developers should be able to figure out how your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+### HEAD Dependencies
+
+Let's say that you have a Git repository with an extra Git remote named `scaffold` which has a `master` branch.
+Locally, you'd like your own `master` to stay up-to-date with `scaffold` but also includes some of your own changes (e.g. a custom `README.md`).
+You've assumed the fact that your own `master` branch will never be pulled on the `scaffold` remote.
+
+When a change occurs on the `scaffold` upstream, it's necessary to merge again the branch you're depending on.
+
+That's a job for gitxl! Let's add a `.gitxlrc.yml` file at the root of our Git repository:
+
+```yml
+remotes:
+  scaffold: git@github.com:bbenoist/scaffold.git
+
+depends:
+  - scaffold/master
+```
+
+Then, all we have to do is call the `gitxl pull` command which will:
+
+1. Search and read a configuration file in the current working directory.
+2. Update the Git remotes with the entries listed in the configuration files and fetch them.
+3. Merge each branch listed in `depends` into `HEAD` (i.e. the currently checked out branch).
+
+### Branch Management
+
+Take a Git repository with the following branches:
+
+* `master` - The main release branch. This is where the official releases are committed.
+* `develop` - The main development branches. This is where the next release is being developed.
+* `feature/awesome` - A feature branch which will live as long as the feature is not ready for `develop`.
+
+By reading their description, we can see that these branches have dependencies between them: `feature/awesome` depends on `develop` which depends on `master.
+
+When a change occurs, it's necessary to reapply the dependency-chain by merging each branch in the correct dependency order.
+
+That's a job for gitxl! Let's add a `.gitxlrc.yml` file at the root of our Git repository:
+
+```yml
+remotes:
+  scaffold: git@github.com:bbenoist/scaffold.git
+
+branches:
+  master:
+    track: scaffold/master
+  develop:
+    track: scaffold/develop
+    merge:
+      - master
+  feature/awesome:
+    track: scaffold/feature/awesome
+    merge:
+      - develop
+```
+
+Then, all we have to do is call the `gitxl apply-merge` command which will:
+
+1. Search and read a configuration file in the current working directory.
+2. Update the Git remotes with the entries listed in the configuration files and fetch them.
+3. Merge each branch listed in `branches` with the ref present in their `track` property.
+4. Merge `merge` entries into each branch by respecting the dependency-chain.
 
 ## Installation
 
-TODO - Provide step by step series of examples and explanations about how to get a development environment running.
+### npm
+
+```text
+npm install -g gitxl
+```
+
+### yarn
+
+```text
+yarn global add gitxl
+```
+
+### Git Clone
+
+```text
+git clone https://github.com/bbenoist/gitxl.git
+cd gitxl
+npm link
+```
 
 ## Usage
 
-TODO - If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
+To read an up-to-date command-line usage of gitxl, visit [Command-Line Interface Documentation](doc/cli.md) or call `gitxl --help`.
 
-## API Reference
+## Configuration
 
-TODO - Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+As the tool is based on _[cosmiconfig](https://github.com/davidtheclark/cosmiconfig)_, gitxl configuration can be set using one of the following methods:
 
-## Build Status
+* a `gitxl` property at the root of `package.json`.
+* a JSON or YAML, `.gitxlrc` file.
+* a `.gitxlrc` file with the extensions .json, .yaml, .yml, or .js.
+* a `gitxl.config.js` CommonJS module.
 
-TODO - Add CI (GitLab, Travis, AppVeyor) badges to allow build status reporting within this file.
+Cosmiconfig continues to search up the directory tree, checking each of these places in each directory, until it finds some acceptable configuration (or hits the home directory).
 
-## Tests
+Complete API reference for gitxl configuration files can be read at [`doc/config.schema.md`](doc/config.schema.md). Corresponding _[json-schema](http://json-schema.org/)_ schemas can be seen at [`doc/config.schema.json`](doc/config.schema.json) (release) or [`src/config.schema.json`](src/config.schema.json) (development).
 
-TODO - Describe and show how to run the tests with code examples.
+## Test
+
+```text
+npm run test
+```
 
 ## Contribute
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information about our contributing guidelines.
 
-## Credits
-
-TODO - Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project.
-
 ## License
 
-Copyright (c) DropXL - All rights reserved
+[MIT](LICENSE.md)

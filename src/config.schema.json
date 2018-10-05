@@ -1,0 +1,43 @@
+{
+  "$id": "bbenoist/gitxl",
+  "title": "gitxl configuration file.",
+  "description": "gitxl configuration file.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "remotes": {
+      "description": "Git remotes to add/update",
+      "type": "object",
+      "additionalProperties": {
+        "description": "Location of the remote repository",
+        "type": "string"
+      }
+    },
+    "depends": {
+      "description": "List of branches from which HEAD is depending on",
+      "type": "array",
+      "items": {
+        "description": "Branch name (e.g. master)",
+        "type": "string"
+      }
+    },
+    "branches": {
+      "description": "Branches managed by the tool",
+      "type": "object",
+      "properties": {
+        "track": {
+          "description": "Another branch to track 'e.g. `origin/<branch>`)",
+          "type": "string"
+        },
+        "merge": {
+          "description": "List of branches to merge into",
+          "type": "array",
+          "items": {
+            "description": "Branch name (e.g. master)",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

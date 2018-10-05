@@ -3,25 +3,11 @@
   // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
-    "christian-kohler.npm-intellisense",
     "davidanson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
-    "deerawan.vscode-faker",
-    "dkundel.vscode-npm-source",
-    "donjayamanne.githistory",
-    "eamodio.gitlens",
     "editorconfig.editorconfig",
-    "eg2.tslint",
-    "eg2.vscode-npm-script",
-    "fatihacet.gitlab-workflow",
-    "gruntfuggly.todo-tree",
     "orta.vscode-jest",
-    "rbbit.typescript-hero",
-    "rbbit.typescript-hero",
-    "redhat.vscode-yaml",
-    "tyriar.sort-lines",
-    "wmaurer.change-case",
-    "yzhang.markdown-all-in-one",
+    "redhat.vscode-yaml"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

@@ -1,4 +1,3 @@
-import * as glob from "glob";
 import * as lintJson from "./lint-json";
 
 function main(): number {

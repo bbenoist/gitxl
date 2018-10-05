@@ -4,7 +4,7 @@ When contributing to this repository, please first discuss the change you wish t
 
 ## Recommended Tools
 
-* [Visual Studio Code](https://code.visualstudio.com/) - A lightweight code editor.  
+* [Visual Studio Code](https://code.visualstudio.com/) - A lightweight code editor.
   The list of recommended VS Code extensions can be seen by opening the root directory of this repository in VS Code and entering the following command:
 
   ```text
@@ -50,7 +50,7 @@ When you have resources to regroup, create a `res` directory wherever its contex
 
 ### Git Commit Messages
 
-We have very precise rules over how our git commit messages can be formatted.  
+We have very precise rules over how our git commit messages can be formatted.
 This leads to **more readable messages** that are easy to follow when looking through the **project history**.
 
 #### Commit Message Format
@@ -70,7 +70,7 @@ The **header** is mandatory and the **scope** of the header is optional.
 Any line of the commit message cannot be longer than 80 characters!
 This allows the message to be easier to read on GitHub as well as in various git tools.
 
-The footer should contain a [closing reference to an issue](https://docs.gitlab.com/ee/user/project/issues/automatic_issue_closing.html) if any.
+The footer should contain a [closing reference to an issue](https://help.github.com/en/articles/closing-issues-using-keywords) if any.
 
 Samples:
 
@@ -157,7 +157,7 @@ See [markdownlint rules](https://github.com/DavidAnson/markdownlint/blob/master/
 
 * When possible, use underscores `_` instead of hyphen `-` for key naming.
 
-* Indent hyphen of lists by 2 spaces.  
+* Indent hyphen of lists by 2 spaces.
   e.g.:
   Do:
 

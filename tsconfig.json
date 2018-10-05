@@ -20,7 +20,7 @@
   "include": [
     "contrib/**/*",
     "src/**/*",
-    "test/**/*"
+    "test/**/*", "bin/gitxl"
   ],
   "exclude": [
     "node_modules",
