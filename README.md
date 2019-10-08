@@ -1,5 +1,10 @@
 # gitxl
 
+[![NPM Version](https://img.shields.io/npm/v/gitxl.svg?style=flat)](https://npmjs.org/package/gitxl)
+[![Build Status](https://travis-ci.org/bbenoist/gitxl.svg?branch=master)](https://travis-ci.org/bbenoist/gitxl)
+[![Greenkeeper badge](https://badges.greenkeeper.io/bbenoist/gitxl.svg)](https://greenkeeper.io/)
+[![Coverage Status](https://coveralls.io/repos/github/bbenoist/gitxl/badge.svg?branch=master)](https://coveralls.io/github/bbenoist/gitxl?branch=master)
+
 A handy tool to help working with Git repositories.
 
 ## Motivation
