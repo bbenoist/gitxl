@@ -73,6 +73,13 @@
       "problemMatcher": []
     },
     {
+      "label": "Build Typescript to CommonJS",
+      "group": "build",
+      "type": "npm",
+      "script": "build:cjs",
+      "problemMatcher": ["$tsc"]
+    },
+    {
       "label": "Build JSON Schema (Watch)",
       "group": "build",
       "type": "npm",

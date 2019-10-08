@@ -21,6 +21,10 @@ export class BranchHelper {
     }
   }
 
+  private static toGitFlag(gitName: string, value: boolean) {
+    return `--${value ? "" : "no-"}${gitName}`;
+  }
+
   public async updateRemotes() {
     logger.verbose("Updating list of Git remotes...");
     const existing = await this.git.getRemotes(true);
@@ -46,14 +50,18 @@ export class BranchHelper {
     );
   }
 
-  public async pullDependencies() {
+  public async pullDependencies(allowUnrelatedHistories: boolean) {
     await this.updateRemotes();
     await this.fetchAll();
     if (!this.config.depends || this.config.depends.length === 0) {
       logger.verbose("No dependency found. Exiting...");
       return;
     }
-    await this.mergeDependencies(undefined, this.config.depends);
+    await this.mergeDependencies(
+      undefined,
+      this.config.depends,
+      allowUnrelatedHistories
+    );
   }
 
   public async applyMerge() {
@@ -100,7 +108,8 @@ export class BranchHelper {
 
   private async mergeDependencies(
     branch: string | undefined,
-    dependencies: string[]
+    dependencies: string[],
+    allowUnrelatedHistories = false
   ) {
     for (const dependency of dependencies) {
       if (branch !== undefined) {
@@ -108,7 +117,12 @@ export class BranchHelper {
         await this.git.checkout(branch);
       }
       logger.verbose(`Merging ${dependency}...`);
-      await this.git.merge([dependency]);
+      const allowUnrelatedHistoriesFlag = BranchHelper.toGitFlag(
+        "allow-unrelated-histories",
+        allowUnrelatedHistories
+      );
+      const options = [dependency, allowUnrelatedHistoriesFlag];
+      await this.git.merge(options);
       const branchTxt = branch === undefined ? "HEAD" : branch;
       logger.info(`Merged ${dependency} into ${branchTxt}.`);
     }

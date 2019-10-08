@@ -99,3 +99,4 @@ typings/
 
 # Build directories
 build
+lib

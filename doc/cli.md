@@ -68,7 +68,7 @@ Fetch then Merge the list of Git dependencies.
 #### Usage
 
 ```text
-gitxl pull [-c CONFIG] [-h]
+gitxl pull [-c CONFIG] [--allow-unrelated-histories] [-h]
 ```
 
 #### Details
@@ -77,6 +77,7 @@ This action merges the Git branch dependencies listed in the configuration file 
 
 #### Arguments
 
+* `--allow-unrelated-histories` - By default, git merge command refuses to merge histories that do not share a common ancestor. This option can be used to override this safety when merging histories of two projects that started their lives independently. As that is a very rare occasion, no configuration variable to enable this by default exists and will not be added.
 * `-c`, `--config` - Specify a configuration file to load instead of searching for it.
 * `-h`, `--help` - Show command-line help for this action and exit
 

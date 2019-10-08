@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 // tslint:disable-next-line:no-var-requires
-require("../build/src/main");
+require("../build/main");
 
 // https://github.com/npm/npm/issues/6674#issuecomment-108132800

@@ -3,9 +3,7 @@
     "declaration": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "target": "es2015",
     "strict": true,
     "esModuleInterop": true,
@@ -13,18 +11,8 @@
     "preserveConstEnums": true,
     "removeComments": true,
     "inlineSourceMap": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": [
-    "contrib/**/*",
-    "src/**/*",
-    "test/**/*", "bin/gitxl"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*-spec.ts",
-    "**/*.test.ts"
-  ]
+  "include": ["src/**/*", "bin/gitxl"],
+  "exclude": ["node_modules", "**/*-spec.ts", "**/*.test.ts", "build"]
 }

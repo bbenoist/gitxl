@@ -8,10 +8,10 @@
     "node": ">=6.0.0"
   },
   "files": [
-    "build/src"
+    "build"
   ],
-  "main": "build/src/index.js",
-  "types": "build/src/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "bin": {
     "gitxl": "bin/gitxl"
   },
@@ -21,8 +21,8 @@
     "build:doc:cli": "ts-node src/main.ts help-md -o doc/cli.md",
     "build:doc:config": "jsonschema2md --no-readme -d src/config.schema.json -o doc",
     "build:json-schema:watch": "npm run build:json-schema -- --watch",
-    "build:json-schema": "cpx src/*.schema.json build/src",
-    "build:ts": "tsc --pretty",
+    "build:json-schema": "cpx src/*.schema.json build",
+    "build:ts": "tsc --module commonjs --outDir build",
     "build:ts:watch": "npm run build:ts -- --watch",
     "clean": "rimraf build && rimraf coverage",
     "coverage": "jest --coverage",
