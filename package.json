@@ -1,7 +1,7 @@
 {
   "name": "gitxl",
   "description": "A handy tool to help working with Git repositories.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "repository": "https://github.com/bbenoist/gitxl",
   "engines": {
