@@ -47,7 +47,7 @@
     "camelcase-keys": "^4.2.0",
     "cosmiconfig": "^5.2.1",
     "read-pkg-up": "^4.0.0",
-    "simple-git": "^1.126.0",
+    "simple-git": "^3.3.0",
     "toposort": "^2.0.2",
     "winston": "^3.2.1"
   },
